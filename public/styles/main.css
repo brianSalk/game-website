@@ -16,6 +16,8 @@ body {
 #dropdown {
   display: inline;
   position: static; }
+  #dropdown:hover #dropdown__content {
+    border-bottom: .2rem solid grey; }
   #dropdown__label {
     position: relative;
     display: inline-block;
@@ -60,7 +62,6 @@ body {
     left: 10%;
     position: absolute;
     background-color: #c8c8c8;
-    border-bottom: .2rem solid grey;
     margin: 0;
     width: 60%;
     clip-path: polygon(3% 0, 100% 0, 96% 100%, 0 100%);

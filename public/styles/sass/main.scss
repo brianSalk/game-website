@@ -19,6 +19,11 @@ body {
 #dropdown {
     display: inline;
     position: static;
+
+    &:hover &__content {
+        border-bottom: .2rem solid grey;
+    }
+
     &__label {
         @include white-text-item($heightOfPsuedo: .1rem);
     }
@@ -26,7 +31,6 @@ body {
         left: 10%;
         position: absolute;
         background-color: rgb(200, 200, 200);
-        border-bottom: .2rem solid grey;
         margin: 0;
         width: 60%;
         clip-path: polygon(3% 0, 100% 0, 96% 100%, 0 100%);
