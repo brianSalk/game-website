@@ -1,4 +1,4 @@
-@mixin white-text-item {
+@mixin white-text-item($heightOfPsuedo) {
     position: relative;
     display: inline-block;
     padding: 2rem;
@@ -11,7 +11,7 @@
     &::after {
         position: absolute;
         content: "";
-        height: .1rem;
+        height: $heightOfPsuedo;
         width: 90%;
         top: 25%;
         left: 110%;
@@ -29,12 +29,11 @@
     &::before {
         position: absolute;
         content: "";
-        height: .1rem;
+        height: $heightOfPsuedo;
         width: 90%;
         top: 75%;
         left: -110%;
         background-color: green;
-        
         opacity: 0;
         transition: all .5s ease-out;
     }

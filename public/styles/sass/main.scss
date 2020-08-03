@@ -1,7 +1,10 @@
-@import "./common/mixins.scss";
+@import "./common/_mixins.scss";
 
 html {
     font-size: 62.5%;
+}
+body {
+    background-image: radial-gradient(rgba(0, 128, 0, 0.212), darken(rgba(0, 128, 0, 1), 15%)), linear-gradient(to right, red, yellow);
 }
 #menu {
     position: relative;
@@ -17,28 +20,28 @@ html {
     display: inline;
     position: static;
     &__label {
-        @include white-text-item;
+        @include white-text-item($heightOfPsuedo: .1rem);
     }
     &__content {
-        animation: slideIn .2s ease-out;
         left: 10%;
         position: absolute;
-        background-color: grey;
+        background-color: rgb(200, 200, 200);
+        border-bottom: .2rem solid grey;
         margin: 0;
         width: 60%;
         clip-path: polygon(3% 0, 100% 0, 96% 100%, 0 100%);
-        display: none;
+        display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        
-        height: 5rem;
+        align-items: center;
+        height: 0;
         padding-left: 10%;
         padding-right: 10%;
-        transition: all .2s ease-in;
+        transition: all .1s ease-in .1s;
         z-index: 1;
+
         &--item {
             clip-path: polygon(0 0, 100% 0, 100% 80%, 100% 100%, 0 90%);
-            
             display: inline-block;
             height: 100%;
             padding: 0 1rem 0 1rem;
@@ -46,6 +49,7 @@ html {
             text-decoration: none;
             color: black;
             font-family: cursive;
+
             &:hover {
                 background-color: darken(grey, 15%);
             }
@@ -53,39 +57,24 @@ html {
         }
     }
     
-    // psuedo elements
     &:hover &__content {
-        display: flex;
-        align-items: center;
-        transition: all .4s ease-in;
+        height: 5rem;
+        transition: all .1s ease-in;
     }
 }
 
 #button {
-    @include white-text-item;
+    @include white-text-item($heightOfPsuedo: 0);
     border-radius: 2.5rem;
     border: none;
     
     &:hover {
-        background-image: radial-gradient(rgb(93, 93, 93),black);
-        transition: all .3s;
+        background-image: radial-gradient(rgb(93+150, 0, 53),black);
     }
     &:active {
-        background-image: radial-gradient(rgb(71, 71, 71),black);
-        transition: all .3s;
-        transform: translateY(0);
+        background-image: radial-gradient(rgb(93+100, 0, 53),black);
     }
 
 }
 
 // ------------------------------------------- animations -----------------------------------------------------
-@keyframes slideIn {
-    0% {
-        opacity: 0;
-        height: 0px;
-    }
-    100% {
-        opacity: 1;
-        height: fit-content;
-    }
-}

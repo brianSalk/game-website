@@ -1,6 +1,9 @@
 html {
   font-size: 62.5%; }
 
+body {
+  background-image: radial-gradient(rgba(0, 128, 0, 0.212), #003400), linear-gradient(to right, red, yellow); }
+
 #menu {
   position: relative;
   display: flex;
@@ -26,7 +29,7 @@ html {
     #dropdown__label::after {
       position: absolute;
       content: "";
-      height: .1rem;
+      height: 0.1rem;
       width: 90%;
       top: 25%;
       left: 110%;
@@ -41,7 +44,7 @@ html {
     #dropdown__label::before {
       position: absolute;
       content: "";
-      height: .1rem;
+      height: 0.1rem;
       width: 90%;
       top: 75%;
       left: -110%;
@@ -54,20 +57,21 @@ html {
       opacity: 1;
       transition: all .5s ease-out; }
   #dropdown__content {
-    animation: slideIn .2s ease-out;
     left: 10%;
     position: absolute;
-    background-color: grey;
+    background-color: #c8c8c8;
+    border-bottom: .2rem solid grey;
     margin: 0;
     width: 60%;
     clip-path: polygon(3% 0, 100% 0, 96% 100%, 0 100%);
-    display: none;
+    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    height: 5rem;
+    align-items: center;
+    height: 0;
     padding-left: 10%;
     padding-right: 10%;
-    transition: all .2s ease-in;
+    transition: all .1s ease-in .1s;
     z-index: 1; }
     #dropdown__content--item {
       clip-path: polygon(0 0, 100% 0, 100% 80%, 100% 100%, 0 90%);
@@ -81,9 +85,8 @@ html {
       #dropdown__content--item:hover {
         background-color: #5a5a5a; }
   #dropdown:hover #dropdown__content {
-    display: flex;
-    align-items: center;
-    transition: all .4s ease-in; }
+    height: 5rem;
+    transition: all .1s ease-in; }
 
 #button {
   position: relative;
@@ -100,7 +103,7 @@ html {
   #button::after {
     position: absolute;
     content: "";
-    height: .1rem;
+    height: 0;
     width: 90%;
     top: 25%;
     left: 110%;
@@ -115,7 +118,7 @@ html {
   #button::before {
     position: absolute;
     content: "";
-    height: .1rem;
+    height: 0;
     width: 90%;
     top: 75%;
     left: -110%;
@@ -128,17 +131,6 @@ html {
     opacity: 1;
     transition: all .5s ease-out; }
   #button:hover {
-    background-image: radial-gradient(#5d5d5d, black);
-    transition: all .3s; }
+    background-image: radial-gradient(#f30035, black); }
   #button:active {
-    background-image: radial-gradient(#474747, black);
-    transition: all .3s;
-    transform: translateY(0); }
-
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    height: 0px; }
-  100% {
-    opacity: 1;
-    height: fit-content; } }
+    background-image: radial-gradient(#c10035, black); }
