@@ -1,0 +1,47 @@
+@mixin white-text-item {
+    position: relative;
+    display: inline-block;
+    padding: 2rem;
+    margin: 0;
+    font-size: 3rem;
+    font-family: consolas;
+    color:white;
+    background-color: black;
+    overflow-x: visible;
+    &::after {
+        position: absolute;
+        content: "";
+        height: .1rem;
+        width: 90%;
+        top: 25%;
+        left: 110%;
+        background-color: green;
+        
+        opacity: 0;
+        transition: all .5s ease-out;
+    }
+    &:hover::after {
+        content: "";
+        left: 5%;
+        opacity: 1;
+        transition: all .5s ease-out;
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        height: .1rem;
+        width: 90%;
+        top: 75%;
+        left: -110%;
+        background-color: green;
+        
+        opacity: 0;
+        transition: all .5s ease-out;
+    }
+    &:hover::before {
+        content: "";
+        left: 5%;
+        opacity: 1;
+        transition: all .5s ease-out;
+    }
+}

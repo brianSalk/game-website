@@ -1,0 +1,11 @@
+<div id="menu">
+    {{#each tabs as |tab|}}
+        {{#if tab.dropdown}}
+            {{>menu/dropdown}}
+        {{/if}}
+        {{#if tab.button}}
+            {{>menu/button}}
+        {{/if}}
+
+    {{/each}}
+</div>

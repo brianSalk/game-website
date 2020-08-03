@@ -1,0 +1,91 @@
+@import "./common/mixins.scss";
+
+html {
+    font-size: 62.5%;
+}
+#menu {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    background-color: black;
+    z-index: 2;
+}
+
+#dropdown {
+    display: inline;
+    position: static;
+    &__label {
+        @include white-text-item;
+    }
+    &__content {
+        animation: slideIn .2s ease-out;
+        left: 10%;
+        position: absolute;
+        background-color: grey;
+        margin: 0;
+        width: 60%;
+        clip-path: polygon(3% 0, 100% 0, 96% 100%, 0 100%);
+        display: none;
+        flex-direction: row;
+        justify-content: space-evenly;
+        
+        height: 5rem;
+        padding-left: 10%;
+        padding-right: 10%;
+        transition: all .2s ease-in;
+        z-index: 1;
+        &--item {
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 100% 100%, 0 90%);
+            
+            display: inline-block;
+            height: 100%;
+            padding: 0 1rem 0 1rem;
+            font-size: 2rem;
+            text-decoration: none;
+            color: black;
+            font-family: cursive;
+            &:hover {
+                background-color: darken(grey, 15%);
+            }
+            
+        }
+    }
+    
+    // psuedo elements
+    &:hover &__content {
+        display: flex;
+        align-items: center;
+        transition: all .4s ease-in;
+    }
+}
+
+#button {
+    @include white-text-item;
+    border-radius: 2.5rem;
+    border: none;
+    
+    &:hover {
+        background-image: radial-gradient(rgb(93, 93, 93),black);
+        transition: all .3s;
+    }
+    &:active {
+        background-image: radial-gradient(rgb(71, 71, 71),black);
+        transition: all .3s;
+        transform: translateY(0);
+    }
+
+}
+
+// ------------------------------------------- animations -----------------------------------------------------
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        height: 0px;
+    }
+    100% {
+        opacity: 1;
+        height: fit-content;
+    }
+}

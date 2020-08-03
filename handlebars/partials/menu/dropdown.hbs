@@ -1,0 +1,10 @@
+<div id="dropdown">
+    <h1 id="dropdown__label">
+        {{dropdown}}&#8250;
+    </h1>
+    <div id="dropdown__content">
+        {{#each dropdown_items as |each_item|}}
+            <a href={{href}} id="dropdown__content--item">{{label}}</a>
+        {{/each}}
+    </div>
+</div>
